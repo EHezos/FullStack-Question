@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJS Real-Time Search</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+
+<input type="text" ng-model="search" placeholder="Search">
+
+<ul>
+    <li ng-repeat="item in items | filter: search">
+        {{ item.name }}
+    </li>
+</ul>
+
+<script>
+    var app = angular.module('myApp', []);
+
+    app.controller('myCtrl', function($scope, $http) {
+        $scope.items = [
+            { "name": "Tesla" },
+            { "name": "BMW" },
+            { "name": "Lambo" },
+            { "name": "Luxus" },
+        ];
+    });
+</script>
+
+</body>
+</html>

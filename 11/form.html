@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form</title>
+</head>
+<body>
+    <h1>KIT Student Form</h1>
+    <form id="studentForm">
+        <label>Name: </label>
+        <input type="text" id="name" placeholder="Eavheang"><br><br>
+        <label>Age: </label>
+        <input type="number" id="age" placeholder="18"><br><br>
+        <label>Email: </label>
+        <input type="email" id="email" placeholder="eavheang@gmail.com"><br><br>
+        <label>Choose your major: </label><br>
+        <input type="radio" id="SE" name="major" value="Software Engineer">
+        <label>Software Engineer</label><br>
+        <input type="radio" id="TSM" name="major" value="Tourism Management">
+        <label>Tourism Management</label><br>
+        <button type="button" id="submitBtn" onclick="submitForm()">Submit</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+        function submitForm() {
+            // Get form values
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var email = document.getElementById("email").value;
+            var major = document.querySelector('input[name="major"]:checked');
+
+            // Check if all fields are filled
+            if (name && age && email && major) {
+                // Display the form data
+                var outputDiv = document.getElementById("output");
+                outputDiv.innerHTML = "<h2>Form Data:</h2>";
+                outputDiv.innerHTML += "<p><strong>Name:</strong> " + name + "</p>";
+                outputDiv.innerHTML += "<p><strong>Age:</strong> " + age + "</p>";
+                outputDiv.innerHTML += "<p><strong>Email:</strong> " + email + "</p>";
+                outputDiv.innerHTML += "<p><strong>Major:</strong> " + major.value + "</p>";
+            } else {
+                alert("Please fill in all fields before submitting.");
+            }
+        }
+    </script>
+</body>
+</html>

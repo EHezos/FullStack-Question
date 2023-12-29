@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="MainController">
+    <input type="text" ng-model="search" placeholder="Search...">
+    <select ng-model="sortOrder">
+        <option value="name">Sort by Name</option>
+        <option value="price">Sort by Price</option>
+    </select>
+    <ul>
+        <li ng-repeat="item in items | filter:search | orderBy:sortOrder">
+            {{ item.name }} - ${{ item.price }}
+        </li>
+    </ul>
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+
+    app.controller('MainController', function($scope) {
+        var store = [
+            { "name": "Tesla", "price": 10 },
+            { "name": "BMW", "price": 20 },
+            { "name": "Lambo", "price": 15 },
+            { "name": "Luxis", "price": 30 }
+        ];
+        $scope.items = store;
+    });
+</script>
+</body>
+</html>

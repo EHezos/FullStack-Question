@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJS Directive</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <h1>Slider</h1>
+
+<custom-slider></custom-slider>
+
+<script>
+    var app = angular.module('myApp', []);
+
+    app.directive('customSlider', function() {
+        return {
+            restrict: 'E',
+            template: '<input type="range" min="1" max="100" ng-model="sliderValue"> Selected Value: {{sliderValue}}',
+            link: function(scope) {
+                scope.sliderValue = 50; // Default slider value
+            }
+        };
+    });
+</script>
+
+</body>
+</html>

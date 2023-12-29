@@ -1,0 +1,125 @@
+.header {
+    color: white;
+    background-color: orange;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    justify-content: space-between;
+    display: flex;
+}
+.header h1 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+.header nav {
+    display: inline;
+    float: right;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    
+}
+.header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.header nav ul li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+.header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+.header nav ul li a:hover {
+    background-color: white;
+    color: orange;
+}
+body{
+    background-color: rgba(255, 166, 0, 0.795);
+    width: 100%;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.intro {
+    margin-top: 100px;
+    display: fixed;
+    padding: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main {
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
+}
+.container {
+    background-color: #E25E3E;
+    padding: 10px;
+    margin: 20px;
+    width: 70%;
+    align-items: center;
+    
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgb(255, 94, 0);
+    margin-bottom: 20px;
+    display: inline-block;
+
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+}
+input[type="text"],
+select,
+input[type="file"],
+input[type="number"],
+input[type="tel"],
+input[type="email"], 
+input[type="date"]{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+input[type="submit"] {
+    background-color: #C63D2F;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 18px;
+}
+footer{
+    color: white;
+    background-color: orange;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    justify-content: space-between;
+    display: flex;
+}
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}
